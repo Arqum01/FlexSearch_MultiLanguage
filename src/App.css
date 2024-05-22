@@ -1,0 +1,110 @@
+#root {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 2rem;
+  /* text-align: center; */
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+.inputField{
+  min-width: 1440px;
+  height: 50px;
+  border-radius: 20px;
+  border: 1px solid white;
+  color: white;
+  font-size: 18px;
+  padding-inline: 30px;
+}
+li{
+  font-size: 24px;
+}
+.names{
+  margin-left: 20px;
+}
+
+.container {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.container button {
+  padding: 10px;
+  border-radius: 20px;
+  background-color: white;
+  color: black;
+  border: none;
+  cursor: pointer;
+}
+
+.container button.active {
+  background-color: black;
+  color: white;
+}
+
+.input-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+.input {
+  width: 1440px;
+  height: 40px;
+  border: 1px solid gray;
+  padding: 10px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+.subcontainer {
+  margin-top: 20px;
+}
+
+.textContainer {
+  margin: 5px 10px;
+}
+
+.TranslationData {
+  line-height: 30px;
+  margin: 0 10px;
+  font-size: 16px;
+  font-family: 'Custom_Font';
+  width: 1440px;
+}
