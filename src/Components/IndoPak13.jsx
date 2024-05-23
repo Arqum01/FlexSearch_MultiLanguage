@@ -5,7 +5,7 @@ import FlexSearch from 'flexsearch';
 
 export default function IndoPak13() {
 
-  const [trans1, setTrans1] = useState(true);
+  const [trans1, setTrans1] = useState(false);
   const [trans2, setTrans2] = useState(false);
   const [inputText, setInputText] = useState('');
   const [query, setQuery] = useState('');
@@ -57,6 +57,11 @@ export default function IndoPak13() {
     setQuery(inputText);
   };
 
+  const highlightText = (text, highlight) => {
+    const regex = new RegExp(`(${highlight})`, 'gi');
+    return text.replace(regex, match => `<span style="color: red;">${match}</span>`);
+  };
+
   return (
     <>
       <div className="container">
@@ -80,25 +85,19 @@ export default function IndoPak13() {
         {results.length > 0 ? (
           results.map((item, index) => (
             <div key={index} className="textContainer">
-              {/* <p className="TextData">
-                {item.arabic}
-              </p> */}
-              <p className="TranslationData">
-                {item.translation}
-              </p>
+              <p className="TranslationData" dangerouslySetInnerHTML={{ __html: highlightText(item.translation, query) }} />
             </div>
           ))
         ) : (
+          query === '' ? (
             DataTranslation.map((item, index) => (
-            <div key={index} className="textContainer">
-              {/* <p className="TextData">
-                {item}
-              </p> */}
-              <p className="TranslationData">
-                {DataTranslation[index]}
-              </p>
-            </div>
-          ))
+              <div key={index} className="textContainer">
+                <p className="TranslationData">
+                  {DataTranslation[index]}
+                </p>
+              </div>
+            ))
+          ) : null
         )}
       </div>
     </>
